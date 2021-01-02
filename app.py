@@ -23,7 +23,8 @@ def api():
 
 @socketio.on('connect')
 def on_connect():
-    payload = dict(data='askme')
+    askme = input('Enter message : ')
+    payload = dict(data=askme)
     emit('log', payload, broadcast=True)
 
 
